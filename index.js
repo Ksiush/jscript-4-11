@@ -1,16 +1,38 @@
-let number1;
-console.log(number1);
-number1= 12;
-console.log(number1);
+let number=456;
 
-let userFirstName;
+number = number +6;
+number+=6;
 
-const userLastName ='Pit';
+number = number +1;
+number ++;
 
-userFirstName = 'Tom'
+number = number /2;
+number /=2;
 
-//userFirstName - 'Brad'
+number = number -3;
+number-=3;
 
-//userLastName = 'Cruze'
+number = number -1;
+number--;
 
-console.log(userFirstName, userLastName)
+number = number %4;
+number%=4;
+
+number = number +'qwerty';
+number+='qwerty';
+
+
+
+
+
+let number1 =45 ;
+let number2 = 12;
+
+console.log(number1+number2);
+console.log(number1-number2);
+console.log(number1/number2);
+console.log(number1*number2);
+
+
+
+
