@@ -8,7 +8,7 @@
 // --------------------
 
 
-const numberOfSeasons = prompt("Choose number of month:");
+const numberOfSeasons = Number (prompt="Choose number of month:");
 switch (numberOfSeasons) {
     case '1':
     case '2':
@@ -37,17 +37,17 @@ switch (numberOfSeasons) {
 
 
 
-    const numberOfSeasons1 = prompt("Choose number of month:");
-    if (numberOfSeasons1 ==='1'|| numberOfSeasons1==='2'|| numberOfSeasons1==='12'){
+    const numberOfSeasons1 = Number(prompt="Choose number of month:");
+    if (numberOfSeasons1 ===1|| numberOfSeasons1===2|| numberOfSeasons1===12){
         console.log( 'winter');
     } 
-    else if(numberOfSeasons1 ==='3'|| numberOfSeasons1=== '4' ||numberOfSeasons1=== '5'){   
+    else if(numberOfSeasons1 ===3|| numberOfSeasons1=== 4 ||numberOfSeasons1=== 5){   
         console.log( 'spring');
     } 
-    else if (numberOfSeasons1 ==='6'|| numberOfSeasons1=== '7' ||numberOfSeasons1=== '8'){   
+    else if (numberOfSeasons1 ===6|| numberOfSeasons1=== 7 ||numberOfSeasons1=== 8){   
         console.log( 'summer');
     }
-    else if (numberOfSeasons1 ==='9'|| numberOfSeasons1=== '10' ||numberOfSeasons1=== '11'){   
+    else if (numberOfSeasons1 ===9|| numberOfSeasons1=== 10 ||numberOfSeasons1=== 11){   
         console.log( 'autumn');
     }
     else {
@@ -65,24 +65,24 @@ switch (numberOfSeasons) {
     // // 
 
 
-    const userTime = prompt('Enter your time');
-    switch (true) {
-        case (userTime<='6'):
-            console.log('good night')
-            break;
-        case ((userTime>='7') && (userTime<'11')):
-            console.log('good morning');
-            break;
-        case ((userTime>='11') && (userTime<'18')):
-            console.log('good day');
-            break;
-        case ((userTime>='18') && (userTime<'23')):
-            console.log('good evening');
-            break;
-        default:
-            console.log('404 try again');
-            break;
-    }
+    // const userTime = prompt('Enter your time');
+    // switch (true) {
+    //     case (userTime<='6'):
+    //         console.log('good night')
+    //         break;
+    //     case ((userTime>='7') && (userTime<'11')):
+    //         console.log('good morning');
+    //         break;
+    //     case ((userTime>='11') && (userTime<'18')):
+    //         console.log('good day');
+    //         break;
+    //     case ((userTime>='18') && (userTime<'23')):
+    //         console.log('good evening');
+    //         break;
+    //     default:
+    //         console.log('404 try again');
+    //         break;
+    // }
 
      
     const userTimes = prompt('Enter time');
@@ -140,27 +140,27 @@ switch (numberOfSeasons) {
     // оберіть самі потрібну конструкцію
     // ----------------------
 
-    const userAge = prompt('Enter your age')
+    const userAge = Number (prompt ='Enter your age')
 
-    if (userAge >= '0' && userAge <'2'){
+    if (userAge >= 0 && userAge <2){
         console.log('baby');
     }
-    else if(userAge >='2' && userAge <'6'){
+    else if(userAge >=2 && userAge <6){
         console.log('kinder');
     }
-    else if (userAge>='6' && userAge <'12'){
+    else if (userAge>=6 && userAge <12){
         console.log('child')
     }
-    else if(userAge>='12' && userAge <'18'){
+    else if(userAge>=12 && userAge <18){
         console.log('teenager')
     }
-    else if (userAge>='18' && userAge <'65'){
+    else if (userAge>=18 && userAge <65){
         console.log('adult')
     }
-    else if (userAge>='65' && userAge <'100'){
+    else if (userAge>=65 && userAge <100){
         console.log('oldman')
     }
-    else if (userAge>='100' && userAge <'150'){
+    else if (userAge>=100 && userAge <150){
         console.log('super!')
     }
     else{
