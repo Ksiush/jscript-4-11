@@ -1,35 +1,22 @@
 
-const Start_diapazon = 0;
-const End_diapazon=50;
-const enterNumber=function(Start_diapazon=0, End_diapazon=50){
-    while(true) {
-        const input = prompt('Enter a number');
-    if(input !=='' && input!==' ' && input!==null){
-        if(input>Start_diapazon && input<End_diapazon){
-            return Number(input)
 
-        }
-    }
+
+function Shoes(name, price, currensy ,discount){
+    this.name = name;
+    this.price =price;
+    this.currensy =currensy;
+    this.discount = 50;
 }
-}
-console.log(enterNumber(3,49))
-
-
-
-
-
-function user (firstName, lastName, userAge){
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.userAge = userAge;
-    this.fullName = function(){
-        console.log(this.firstName + this.lastName)
-    }
-}
-
-const name = new user ('Xenia', 'Golovach', 24);
-console.log(name)
-name.fullName()
-
-
+ Shoes.prototype.discounts=function(){
+    if (this.price>100){
+            this.price=this.price - this.discount;
+            return this.price+this.currensy ;
+        } 
+        return 'try again'    
+ }
+ Shoes.prototype.info= function(){
+    return `${this.name}, ${this.price}, ${this.currensy}`
+ }
+const gucci= new Shoes('gucci', 1000, '$');
+const gacci= new Shoes('gacci', 100, '$');
 
