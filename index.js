@@ -18,7 +18,7 @@ function Shoes(name, price, currensy ,discount){
 const gucci= new Shoes('gucci', 1000, '$');
 const gacci= new Shoes('gacci', 100, '$');
 
-// 2
+// // 2
 
 function Shoes(name, price, currensy, discount) {
   this.name = name;
@@ -36,12 +36,8 @@ function Shoes(name, price, currensy, discount) {
     return "try again";
   };
 }
-// const gucci = new Shoes("gucci", 1000, "$");
-// const gacci = new Shoes("gacci", 100, "$");
 
-
-
-// 3
+// // 3
 function Shoes(name, price, currensy ,discount){
          this.name = name;
          this.price =price;
@@ -55,5 +51,29 @@ function Shoes(name, price, currensy ,discount){
              }
            return 'try again'
       }
-    //  const gucci= new Shoes('gucci', 1000, '$');
-    //  const gacci= new Shoes('gacci', 100, '$');
+     const gucci= new Shoes('gucci', 1000, '$');
+     const gacci= new Shoes('gacci', 100, '$');
+
+//4
+
+    const funcForShoes ={
+      information: function(){
+        console.log( this.name, this.price, this.currensy, this.discount)
+      },
+      discont: function(){
+        if (this.price>100){
+          this.price=this.price - this.discount;
+         return this.price+this.currensy ;
+      }
+      }
+
+    }
+
+    const lab = {
+      name: 'Lab',
+      price: 560,
+      currensy: '$',
+      discount: 50,
+    }
+
+    lab.__proto__ = funcForShoes;
