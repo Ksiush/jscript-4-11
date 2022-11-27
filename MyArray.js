@@ -1,41 +1,25 @@
-// function MyArray() {
-//     this.lenght = 0;
-//     this.push = function (value) {
-//       this[this.lenght] = value;
-//       this.lenght++;
-//       return this.lenght;
-//     };
-//   }
-  
-//   const array = [];
-//   array.push(404);
-//   array.push(456);
-//   console.log(array);
-  
-//   const myArray = new MyArray();
-//   myArray.push(404)
-//   myArray.push(456)
-//   console.log(myArray);
-  
+// Є массив [1,2,3,1,5,6,1,2,5], треба використовуючи цей масив створити новий, в якому будуть присутні тільки тільки ті значення які повторюються.
+// Результат буде [1,2,5]
+// Якщо в джерельному масиві усі значення унікальні, то створюєте новий пустий масив.
+
+
+// *зробити функцію
+
+
+const arr = [1,2,3,1,5,6,1,2,5];
+const selectNonUniq=(array) => {
+  const uniqSet = new Set();
+  for (let i = 0; i < array.length; index++) {
+    for(let j=0; j<i; j++ ){
+      if (arr[j] === arr[j]){
+        uniqSet.add(arr[i])
+      }
+    }
+    
+  }
+  return Array.from(uniqSet);
+}
+console.log(selectNonUniq(arr));
 
 
 
-// function MyArrayPrototype() {
-//     this.push = function (value) {
-//       this[this.length++] = value;
-//       // this.length++;
-//       return this.length;
-//     };
-//   }
-  
-//   function MyArray() {
-//     this.length = 0;
-//   }
-  
-//   MyArray.prototype = new MyArrayPrototype();
-  
-  // const array = []; //instance
-  // console.log(array);
-  
-  // const myArray = new MyArray();
-  // console.log(myArray);
