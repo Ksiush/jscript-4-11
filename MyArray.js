@@ -1,25 +1,25 @@
-// Є массив [1,2,3,1,5,6,1,2,5], треба використовуючи цей масив створити новий, в якому будуть присутні тільки тільки ті значення які повторюються.
-// Результат буде [1,2,5]
-// Якщо в джерельному масиві усі значення унікальні, то створюєте новий пустий масив.
+// 1) Знайти середнє арифметичне значення усіх переданих аргументів, якщо аргументів не має - повертати null
 
 
-// *зробити функцію
 
+const arMean = function() {
+  const args = Array.from(arguments);
+  const summ = args.reduce((sum, current) => 
+{
+  return sum + current;
+})
+return summ / arguments.length;
+};
 
-const arr = [1,2,3,1,5,6,1,2,5];
-const selectNonUniq=(array) => {
-  const uniqSet = new Set();
-  for (let i = 0; i < array.length; index++) {
-    for(let j=0; j<i; j++ ){
-      if (arr[j] === arr[j]){
-        uniqSet.add(arr[i])
-      }
-    }
-    
+console.log(arMean(1,2,3,4,5,6));
+
+// 2) Замінити усі максимальні значення в масиві на значення 0
+
+const chMaxArr = [10,2,3,4,5,5,4,5,10];
+const max = Math.max.apply(null, chMaxArr);
+for (let i = 0; i <chMaxArr.length; i++) {
+  if (chMaxArr[i] === max){
+    chMaxArr[i] = 0;
   }
-  return Array.from(uniqSet);
 }
-console.log(selectNonUniq(arr));
-
-
-
+console.log(chMaxArr);
