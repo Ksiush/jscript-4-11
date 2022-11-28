@@ -1,20 +1,29 @@
-// написати скрипт (можна функцію можна без), який виводить індекс максимального елемента в масиві. Якщо максимальних елементів декілька(значення однакові) - виводить індекс останнього
-// const arrNums = [1, 9, 5, 6 , 7, 9, 4, 6]; => індекс 5
-
-const getIndexOfMax = (arr) => {
-  const max = Math.max.apply(null, arr);
-  return arr.lastIndexOf(max);
-}
-
-console.log(getIndexOfMax([1,19, 5.6,7,9,4,19]));
-
-// * повертати кількість максимальних(однакових) елементів
-// const arrNums = [1, 9, 5, 6 , 7, 9, 4, 6]; =>кількість  2
 
 
-const getCountMax = (arr) => {
-  arr.sort();
-  const result = arr.filter(el => el ===arr.slice(-1) [0]);
-  return result.lenght;
-}
-console.log(getCountMax([1,9,5,6,7,9,4,6]));
+//1) Написати функцію струлку, яка приймає безліч аргументів і повертає їх добуток.
+
+//2) Є масив чисел, треба написати функцію, яка повертає масив з двох елементів, які є мінімальним і максимальним значенням джерельного масиву.
+
+
+// 1) Написати функцію струлку, яка приймає безліч аргументів і повертає їх добуток.
+
+const arrNumb = [1, 2, 3, 8, 9];
+const arrNumb2 = [4, 5, 6];
+
+//1
+const numbers = (initial = 0, ...numbers) =>
+  numbers.reduce((acc, numbers) => numbers * acc, initial);
+
+console.log(numbers(...arrNumb));
+
+const findMinMax =(...numbers)=>[Math.min(...numbers), Math.max(...numbers)]
+
+console.log(findMinMax(...arrNumb))
+
+
+
+
+
+
+
+
