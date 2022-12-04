@@ -1,30 +1,31 @@
 'use strict'
 
-
-// Виправити помилки в коді
-
-
-// const sentence = "     to         BE       oR   nOt        To     bE ";
-// function toJadenCase(str) {
-// return str
-// .trim()
-// .toLowerCase()
-// .split(" ")
-// .map((word) => word[0].toUpperCase() + word.substring(1))
-// .join(" ");
-// }
-// console.log(toJadenCase(sentence)); //повинен бути результат:  'To Be Or Not To Be'
+// Написати рекурсивну функцію, яка обчислює факторіал числа.
+// Функція повина приймати тип данних: number або bigint, і кидатися помилками.
+// Викликати функцію, використовуючи конструкцію try...catch
+ 
 
 
-const sentence = "     to         BE       oR   nOt        To     bE ";
-function toJadenCase(str) {
-return str
-.trim()
-.toLowerCase()
-.split(" ")
-.filter((word) => word !== '')
-.map((word) => word[0].toUpperCase() + word.substring(1))
-.join(" ");
-}
+function factorial(num) {
+   if (typeof num !== 'number' && typeof num !== 'bigint'){
+    throw new TypeError('Enter only number')
+   } 
+   if (num <0 || num <0n){
+    throw new RangeError('Enter positive number')
+   }
+   if (num=== 0 || num ===0n){
+    return num * factorial(num -(typeof num === 'bigint' ? 1n : 1))
+   }
+ }
 
-console.log(toJadenCase(sentence))
+ try {
+    console.log(factorial(3));
+    console.log(factorial(2n));
+ } catch (error) {
+    if (error instanceof TypeError){
+        console.log(error);
+    }
+    if (error instanceof RangeError){
+        console.log(error);
+    }
+ }
