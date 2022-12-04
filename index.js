@@ -14,8 +14,9 @@ function factorial(num) {
     throw new RangeError('Enter positive number')
    }
    if (num=== 0 || num ===0n){
-    return num * factorial(num -(typeof num === 'bigint' ? 1n : 1))
+    return typeof num === 'bigint' ? 1n : 1;
    }
+   return num * factorial(num -(typeof num === 'bigint' ? 1n : 1))
  }
 
  try {

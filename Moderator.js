@@ -24,73 +24,73 @@
 // створити екземпляр кожної білки, викликати на кожній білці усі доступні їй методи
 // використати конструкцію try/catch
 
-class Squirrel {
-  /**
-   *
-   * @param {string} name
-   * @param {string} color
-   * @param {number} lenght
-   */
-  constructor(name, color, isJump = true) {
-    this.name = name;
-    this.color = color;
-    this.isJump = isJump;
-  }
+// class Squirrel {
+//   /**
+//    *
+//    * @param {string} name
+//    * @param {string} color
+//    * @param {number} lenght
+//    */
+//   constructor(name, color, isJump = true) {
+//     this.name = name;
+//     this.color = color;
+//     this.isJump = isJump;
+//   }
 
-  //getters & setters
-  get name() {
-    return this._name;
-  }
+//   //getters & setters
+//   get name() {
+//     return this._name;
+//   }
 
-  set name(name) {
-    if (typeof name !== "string") {
-      throw new TypeError("name must be string");
-    }
-    this._name = name; //set private
-  }
+//   set name(name) {
+//     if (typeof name !== "string") {
+//       throw new TypeError("name must be string");
+//     }
+//     this._name = name; //set private
+//   }
 
-  jump() {
-    return `${this._name} is Jump`;
-  }
-}
+//   jump() {
+//     return `${this._name} is Jump`;
+//   }
+// }
 
-class FlySquirrel extends Squirrel {
-  constructor(name, color, isJump, maxFlyLength = 100) {
-    super(name, color, isJump);
-    this.maxFlyLength = maxFlyLength;
-  }
+// class FlySquirrel extends Squirrel {
+//   constructor(name, color, isJump, maxFlyLength = 100) {
+//     super(name, color, isJump);
+//     this.maxFlyLength = maxFlyLength;
+//   }
 
-  fly(length) {
-    if (length <= this.maxFlyLength) {
-      return `${this._name} is fly at ${length}`;
-    }
-    throw new TypeError("distance must be <=100");
-  }
-}
+//   fly(length) {
+//     if (length <= this.maxFlyLength) {
+//       return `${this._name} is fly at ${length}`;
+//     }
+//     throw new TypeError("distance must be <=100");
+//   }
+// }
 
-class MagicSquirrel extends FlySquirrel {
-  constructor(name, color, isJump, maxFlyLength = 100, words) {
-    super(name, color, isJump, (maxFlyLength = 100));
-    this.words = words;
-  }
+// class MagicSquirrel extends FlySquirrel {
+//   constructor(name, color, isJump, maxFlyLength = 100, words) {
+//     super(name, color, isJump, (maxFlyLength = 100));
+//     this.words = words;
+//   }
 
-  sayWords() {
-    console.log(this.words.split(" ")[0]);
-  }
-}
+//   sayWords() {
+//     console.log(this.words.split(" ")[0]);
+//   }
+// }
 
-try {
-  const mySquirrel = new Squirrel("Andrey", "orange", false);
-  console.log(mySquirrel.jump());
+// try {
+//   const mySquirrel = new Squirrel("Andrey", "orange", false);
+//   console.log(mySquirrel.jump());
 
-  const maxFlySquirrel = new FlySquirrel("Xenia", "red", true);
-  console.log(maxFlySquirrel.fly(67));
-  const magSquirrel = new MagicSquirrel( "Jane", "white",true,50,"Good morning!" );
-  magSquirrel.sayWords();
-  console.log(magSquirrel.sayWords());
-} catch (error) {
-    console.log('Error')
-}
+//   const maxFlySquirrel = new FlySquirrel("Xenia", "red", true);
+//   console.log(maxFlySquirrel.fly(67));
+//   const magSquirrel = new MagicSquirrel( "Jane", "white",true,50,"Good morning!" );
+//   magSquirrel.sayWords();
+//   console.log(magSquirrel.sayWords());
+// } catch (error) {
+//     console.log('Error')
+// }
 
 //   //static
 //   static isUserClasses(value){
@@ -255,92 +255,92 @@ try {
 
 
 
-"use strict";
+// "use strict";
 
-// инкапсуляція (абстракція)
-// + наслідування
-// поліморфізм
+// // инкапсуляція (абстракція)
+// // + наслідування
+// // поліморфізм
 
-class Figure {
-  constructor(name) {
-    if (this.constructor === Figure) {
-      throw new Error("You cannot create instance in abstract class");
-    }
-    this.name = name;
-  }
-  getSquare() {}
-  getPerimetr() {}
-}
+// class Figure {
+//   constructor(name) {
+//     if (this.constructor === Figure) {
+//       throw new Error("You cannot create instance in abstract class");
+//     }
+//     this.name = name;
+//   }
+//   getSquare() {}
+//   getPerimetr() {}
+// }
 
-class Circle extends Figure {
-  /**
-   *
-   * @param {number} diametr
-   */
-  constructor(diametr) {
-    super("circle");
-    this.diametr = diametr; //виклик setter
-  }
-  //инкапсуляція
-  set diametr(diametr) {
-    //перевірка діаметра
-    if (typeof diametr !== "number") {
-      throw new TypeError("Diametr must be number!");
-    }
-    if (diametr <= 0) {
-      throw new RangeError("Diametr cannot be 0 or less");
-    }
-    this._diametr = diametr;
-    this._radius = diametr / 2;
-    this._length = 2 * Math.PI *(diametr / 2);
-  }
-  //поліморфізм
-  getSquare() {
-    return 2 * Math.PI * this._radius * this._radius;
-  }
-  getPerimetr() {
-    return 2 * Math.PI * this._radius;
-  }
-}
+// class Circle extends Figure {
+//   /**
+//    *
+//    * @param {number} diametr
+//    */
+//   constructor(diametr) {
+//     super("circle");
+//     this.diametr = diametr; //виклик setter
+//   }
+//   //инкапсуляція
+//   set diametr(diametr) {
+//     //перевірка діаметра
+//     if (typeof diametr !== "number") {
+//       throw new TypeError("Diametr must be number!");
+//     }
+//     if (diametr <= 0) {
+//       throw new RangeError("Diametr cannot be 0 or less");
+//     }
+//     this._diametr = diametr;
+//     this._radius = diametr / 2;
+//     this._length = 2 * Math.PI *(diametr / 2);
+//   }
+//   //поліморфізм
+//   getSquare() {
+//     return 2 * Math.PI * this._radius * this._radius;
+//   }
+//   getPerimetr() {
+//     return 2 * Math.PI * this._radius;
+//   }
+// }
 
-class Square extends Figure {
-    constructor(side){
-        super('square')
-        this.side=side
-    }
-    set side(side){
-        if (typeof diametr !== "number") {
-            throw new TypeError("Diametr must be number!");
-          }
-          if (diametr <= 0) {
-            throw new RangeError("Diametr cannot be 0 or less");
-    }
-    this._side=side;
-    this.diagonal=Math.sqrt(this._side*this._side*this._side*this.side)
-}
-getSquare(){
-    return this._side*this._side
-}
-getPerimetr(){
-    return 4* this._side;
-}
-}
-
-
+// class Square extends Figure {
+//     constructor(side){
+//         super('square')
+//         this.side=side
+//     }
+//     set side(side){
+//         if (typeof diametr !== "number") {
+//             throw new TypeError("Diametr must be number!");
+//           }
+//           if (diametr <= 0) {
+//             throw new RangeError("Diametr cannot be 0 or less");
+//     }
+//     this._side=side;
+//     this.diagonal=Math.sqrt(this._side*this._side*this._side*this.side)
+// }
+// getSquare(){
+//     return this._side*this._side
+// }
+// getPerimetr(){
+//     return 4* this._side;
+// }
+// }
 
 
-try {
-  const figure1 = new Circle(10);
-  figure1.diametr = 20;
-  //console.log(figure1);
-  //console.log(figure1 instanceof Circle);//true
-  //console.log(figure1 instanceof Figure);//true
-  //console.log(figure1 instanceof Object);//true
-  console.log(figure1.getSquare());
-  console.log(figure1.getPerimetr());
-} catch (error) {
-  console.log(error);
-}
+
+
+// try {
+//   const figure1 = new Circle(10);
+//   figure1.diametr = 20;
+//   //console.log(figure1);
+//   //console.log(figure1 instanceof Circle);//true
+//   //console.log(figure1 instanceof Figure);//true
+//   //console.log(figure1 instanceof Object);//true
+//   console.log(figure1.getSquare());
+//   console.log(figure1.getPerimetr());
+// } catch (error) {
+//   console.log(error);
+// }
 
 
 
